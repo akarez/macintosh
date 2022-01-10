@@ -1,0 +1,82 @@
+#! /bin/bash
+
+############################
+#                          #
+# BSPWM Configuration File #
+#                          #
+############################
+
+# Monitor Rules
+
+external_monitor=$(xrandr --query | grep 'HDMI2')
+internal_monitor=$(cat /proc/acpi/button/lid/LID0/state)
+
+if [[ $internal_monitor = *open* ]] && [[ $external_monitor = *disconnected* ]]; then
+        xrandr --output eDP1 --primary --mode 2560x1600 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off &
+        bspc monitor eDP1      -d I II III IV V VI &
+        bspc wm -O eDP1 &
+fi
+
+if [[ $internal_monitor = *open* ]] && [[ $external_monitor = *connected* ]]; then
+        xrandr --output eDP1 --primary --mode 2560x1600 --pos 0x1080 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --mode 1920x1080 --pos 320x0 --rotate normal --output VIRTUAL1 --off &
+        bspc monitor eDP1      -d I II III IV V VI &
+        bspc monitor HDMI2     -d VII &
+        bspc wm -O eDP1 HDMI2 &
+fi
+
+if [[ $internal_monitor = *closed* ]] && [[ $external_monitor = *connected* ]]; then
+        xrandr --output eDP1 --off --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off &
+        bspc monitor HDMI2      -d I II III IV V VI &
+        bspc wm -O HDMI2 &
+fi
+
+
+# Launch Scripts
+
+$HOME/.config/polybar/launch.sh
+$HOME/.fehbg
+pgrep -x sxhkd > /dev/null || sxhkd &
+xidlehook --not-when-fullscreen --timer 900 'systemctl suspend' '' &
+xsetroot -cursor_name left_ptr &
+picom &
+spotifyd &
+
+# Window Rules
+
+bspc config window_gap          	0
+bspc config border_width		    0
+bspc config split_ratio          	0.50
+
+bspc config borderless_monocle   	    true
+bspc config single_monocle		        true
+bspc config left_monocle_padding 	    50
+bspc config right_monocle_padding 	    50
+bspc config top_monocle_padding 	    50
+bspc config bottom_monocle_padding      50
+
+bspc config center_pseudo_tiled		    true
+bspc config remove_disabled_monitors	true
+bspc config center_pseudo_tiled		    true
+
+# Mouse Rules
+
+bspc config pointer_modifier	        mod4
+bspc config pointer_action1		        move
+bspc config pointer_action2		        resize_side
+bspc config pointer_action3		        resize_corner
+bspc config focus_follows_pointer       true
+
+# External Rules
+
+bspc config external_rules_command	"$HOME/.config/bspwm/scripts/external_rules.sh"
+
+# Program Rules
+
+bspc rule -a discord	    state=tiled	    center=on   	focus=on    desktop='^5'
+bspc rule -a Zathura        state=tiled     center=on       focus=on
+bspc rule -a Teams	        state=floating	center=on	    focus=on
+bspc rule -a qvidcap        state=floating  center=on       focus=on 
+bspc rule -a lstopo         state=floating  center=on       focus=on
+bspc rule -a pavucontrol    state=floating	center=on		focus=on
+
+bspc rule -a CoreShot   manage=false
