@@ -16,11 +16,14 @@ super + Return
 super + @space
 	rofi -show drun
 
+XF86LaunchB
+    rofi -show drun
+
 # Restart Hotkey Daemon
 super + shift + Escape
 	pkill -USR1 -x sxhkd
-# Lock Screen
 
+# Lock Screen
 super + Escape
     slock
 
@@ -39,6 +42,9 @@ super + {_,shift + }q
 # Alternate Tiled and Monocle Mode
 super + m
 	bspc desktop -l next
+
+XF86LaunchA
+    bspc desktop -l next
 
 # Send The Newest Marked Node to the Newest Preselected Node
 super + y

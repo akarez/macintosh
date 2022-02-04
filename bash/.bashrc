@@ -19,6 +19,13 @@ alias sc='nvim ~/.config/sxhkd/sxhkdrc'
 alias ac='nvim ~/.config/alacritty/alacritty.yml'
 alias pc='nvim ~/.config/polybar/config'
 
-#Remove User and Machine from console
+# USF Student Cluster Shortcuts
+
+alias cluster='ssh ahmed1@cselx01.csee.usf.edu'
+alias gp-c='globalprotect connect'
+alias gp-d='globalprotect disconnect'
+alias gp-s='globalprotect status'
+
+#Remove User and Machine From Prompt
 
 PS1="\W \$ "

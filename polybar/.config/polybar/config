@@ -88,7 +88,7 @@ type = internal/bspwm
 pin-workspaces = true
 enable-click = true
 
-format = <label-state>
+format = <label-state> <label-mode>
 
 label-focused = %index%
 label-focused-padding = 1
@@ -106,7 +106,6 @@ label-empty-foreground = ${colors.foreground-alt}
 label-urgent = %index%
 label-urgent-padding = 1
 label-urgent-foreground = ${colors.red}
-
 
 [module/pulseaudio]
 
