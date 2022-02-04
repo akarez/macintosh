@@ -28,20 +28,20 @@ background-alt	= #282828
 foreground	    = #ebdbb2
 foreground-alt	= #504945
 
-yellow  = #b58900;
-orange  = #cb4b16;
-red     = #dc322f;
-magenta = #d33682;
-violet  = #6c71c4;
-blue    = #268BD2;
-cyan    = #2aa198;
-green   = #859900;
+yellow  = #b58900
+orange  = #cb4b16
+red     = #dc322f
+magenta = #d33682
+violet  = #6c71c4
+blue    = #268BD2
+cyan    = #2aa198
+green   = #859900
 
 
 [bar/main]
 
 monitor =
-#monitor-fallback = eDP1
+monitor-fallback = eDP1
 dpi = 144
 
 wm-restack = bspwm
