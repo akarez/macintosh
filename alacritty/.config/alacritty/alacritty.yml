@@ -159,3 +159,7 @@ key_bindings:
     - { key: Equals,  mods: Command, action: IncreaseFontSize }
     - { key: Minus,   mods: Command, action: DecreaseFontSize }
 
+import:
+  - ~/.config/alacritty/paradise.yml
+import:
+  - ~/.config/alacritty/paradise.yml

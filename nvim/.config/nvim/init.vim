@@ -19,15 +19,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'sheerun/vim-polyglot'                     " Better Syntax
 Plug 'gruvbox-community/gruvbox'                " Color Scheme
-Plug 'scrooloose/NERDTree'                      " File Explorer
 Plug 'jiangmiao/auto-pairs'                     " Auto Pair () {} []
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP
 Plug 'liuchengxu/vim-which-key'                 " Key Command Menu
-Plug 'mhinz/vim-startify'                       " Start Menu
 Plug 'kevinoid/vim-jsonc'                       " Coc Comment Highlight 
 Plug 'norcalli/nvim-colorizer.lua'              " Show Color Codes
 Plug 'vim-airline/vim-airline'                  " Status Line
 Plug 'vim-airline/vim-airline-themes'           " Status Line Themes
+Plug 'francoiscabrol/ranger.vim'                " Ranger File Manager
+Plug 'rbgrouleff/bclose.vim'                    " Ranger Extension
+Plug 'glepnir/dashboard-nvim'                   " Dashboard
 
 call plug#end()
 
@@ -67,6 +68,7 @@ set timeoutlen=500
 set formatoptions-=cro
 set clipboard=unnamedplus
 
+set mouse=a
 set background=dark
 colorscheme gruvbox
 
