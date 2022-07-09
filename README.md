@@ -6,7 +6,7 @@ My dotfiles for an Arch Linux system on a MacBook Pro 2015. Most of the settings
 
 ### Installation
 
-The configuration files are managed with [GNU Stow](https://https://www.gnu.org/software/stow/).
+The configuration files are managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 To install, navigate into the cloned directory and enter the following command:
 ```
