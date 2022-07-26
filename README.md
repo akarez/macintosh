@@ -20,7 +20,9 @@ Install display, audio, and wireless packages
 
 *Note: If you have an AMD GPU install xf86-video-amdgpu instead*
 
-`~# pacman -S  xf86-video-intel xorg xorg-xinit pulseaudio `
+```
+~# pacman -S  xf86-video-intel xorg xorg-xinit pulseaudio
+```
 
 
 
