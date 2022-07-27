@@ -1,6 +1,8 @@
 ## Overview
 
-My Arch Linux dotfiles running on a MacBook Pro 2015. Most of the settings are optimized for a laptop form factor, including HiDPI and power management.
+My Arch Linux dotfiles running on a MacBook Pro 2015. Most of the settings are optimized for a laptop form factor, including HiDPI and power management. If you'd like to replicate my system continue reading below.
+
+*Note: The installation steps assume you have [these](https://github.com/akarez/travel/blob/main/README.md#finishing-up) packages already installed*
 
 ![](https://github.com/akarez/macintosh/blob/main/screenshot.png)
 
