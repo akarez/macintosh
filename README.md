@@ -33,7 +33,7 @@ Install display, audio, and wireless packages:
 Install window management and system utilities:
 
 ```
-~$ sudo pacman -S bspwm sxhkd slock alacritty ranger feh rofi picom firefox zip unzip brightnessctl wget upower cron zathura zathura-pdf-mupdf ttf-iosevka-nerd nodejs spotifyd
+~$ sudo pacman -S bspwm sxhkd slock alacritty ranger feh rofi picom firefox zip unzip brightnessctl wget upower cron neovim zathura zathura-pdf-mupdf ttf-iosevka-nerd nodejs spotifyd
 
 ~$ yay -S polybar ueberzug coreshot xidlehook neofetch apple-fonts ttf-ms-win10-auto redshift spotify-tui
 ```
